@@ -13,14 +13,22 @@
 
 BrightnessOSD::BrightnessOSD() :
 OSD(L"3RVX-BrightnessDispatcher"),
-_mWnd(L"3RVX-BrightnessOSD", L"3RVX-BrightnessOSD") {
+_mWnd(L"3RVX-BrightnessOSD", L"3RVX-BrightnessOSD"),
+_mWndSecondary(L"3RVX-BrightnessOSD-Secondary", L"3RVX-BrightnessOSD-Secondary") {
 
     SkinManager *skin = SkinManager::Instance();
     _mWnd.BackgroundImage(skin->BrightnessOSD()->background);
     _mWnd.EnableGlass(skin->BrightnessOSD()->mask);
+    _mWnd.Scale(_settings->PrimaryMonitorScale() / 100.0f);
     _mWnd.Update();
 
-    OSD::InitMeterWnd(_mWnd);
+    OSDComponent *secondary = skin->BrightnessOSD(true);
+    _mWndSecondary.BackgroundImage(secondary->background);
+    _mWndSecondary.EnableGlass(secondary->mask);
+    _mWndSecondary.Scale(_settings->SecondaryMonitorScale() / 100.0f);
+    _mWndSecondary.Update();
+
+    OSD::InitMeterWnd(_mWnd, &_mWndSecondary);
 
     _brightnessCtrl = new DDCBrightnessController(
         DisplayManager::Primary().Handle());
@@ -59,7 +67,7 @@ void BrightnessOSD::ProcessHotkeys(HotkeyInfo &hki) {
 }
 
 void BrightnessOSD::OnDisplayChange() {
-    InitMeterWnd(_mWnd);
+    InitMeterWnd(_mWnd, &_mWndSecondary);
 }
 
 LRESULT

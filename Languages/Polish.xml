@@ -194,6 +194,22 @@
     <translation>Wszystkie monitory oprócz głównego</translation>
   </string>
   <string>
+    <original>Primary Monitor Skin:</original>
+    <translation>Skórka głównego monitora:</translation>
+  </string>
+  <string>
+    <original>Secondary Monitors Skin:</original>
+    <translation>Skórka monitorów dodatkowych:</translation>
+  </string>
+  <string>
+    <original>Same as Primary Monitor</original>
+    <translation>Tak jak na głównym monitorze</translation>
+  </string>
+  <string>
+    <original>Notification Scale (%):</original>
+    <translation>Skala powiadomienia (%):</translation>
+  </string>
+  <string>
     <original>Animation</original>
     <translation>Animacja</translation>
   </string>

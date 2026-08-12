@@ -36,7 +36,19 @@ protected:
 
     void HideOthers(OSDType except);
 
-    void InitMeterWnd(MeterWnd &mWnd);
+    /// <summary>
+    /// Positions and configures a meter window (and its clones) across all
+    /// currently-active monitors.
+    /// </summary>
+    /// <param name="secondaryWnd">
+    /// If non-null, this window is used for notifications on every active
+    /// monitor other than the primary monitor (e.g. when a distinct skin has
+    /// been configured for secondary monitors), while <paramref name="mWnd"/>
+    /// is reserved for the primary monitor. If null, <paramref name="mWnd"/>
+    /// (and its clones) are used for every active monitor, matching the
+    /// previous single-skin behavior.
+    /// </param>
+    void InitMeterWnd(MeterWnd &mWnd, MeterWnd *secondaryWnd = nullptr);
 
     std::vector<Monitor> ActiveMonitors();
     void PositionWindow(Monitor monitor, LayeredWnd &lWnd);
@@ -47,5 +59,8 @@ protected:
         WPARAM wParam, LPARAM lParam);
 
 private:
+    void ApplyCommonSettings(MeterWnd &mWnd);
+    void PositionMonitorGroup(MeterWnd &mWnd, std::vector<Monitor> &monitors);
+
     bool _enabled;
 };

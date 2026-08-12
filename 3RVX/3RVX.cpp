@@ -122,7 +122,10 @@ void _3RVX::Initialize() {
             NULL);
     }
 
-    SkinManager::Instance()->LoadSkin(settings->SkinXML());
+    std::wstring secondarySkin = settings->SecondaryMonitorSkin();
+    std::wstring secondarySkinXML =
+        secondarySkin == L"" ? L"" : settings->SkinXML(secondarySkin);
+    SkinManager::Instance()->LoadSkin(settings->SkinXML(), secondarySkinXML);
 
     DisplayManager::UpdateMonitorMap();
 

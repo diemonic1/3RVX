@@ -425,6 +425,30 @@ std::wstring Settings::SkinXML(std::wstring skinName) {
     return skinXML;
 }
 
+std::wstring Settings::SecondaryMonitorSkin() {
+    return GetText(XML_SECONDARY_SKIN);
+}
+
+void Settings::SecondaryMonitorSkin(std::wstring skinName) {
+    SetText(XML_SECONDARY_SKIN, StringUtils::Narrow(skinName));
+}
+
+int Settings::PrimaryMonitorScale() {
+    return GetInt(XML_SKIN_SCALE, 100);
+}
+
+void Settings::PrimaryMonitorScale(int percent) {
+    SetElementValue(XML_SKIN_SCALE, percent);
+}
+
+int Settings::SecondaryMonitorScale() {
+    return GetInt(XML_SECONDARY_SKIN_SCALE, 100);
+}
+
+void Settings::SecondaryMonitorScale(int percent) {
+    SetElementValue(XML_SECONDARY_SKIN_SCALE, percent);
+}
+
 std::unordered_map<int, HotkeyInfo> Settings::Hotkeys() {
     std::unordered_map<int, HotkeyInfo> keyMappings;
 

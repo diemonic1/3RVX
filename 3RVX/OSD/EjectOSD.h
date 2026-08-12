@@ -26,6 +26,7 @@ private:
     DWORD _ignoreDrives;
     DWORD _latestDrive;
     MeterWnd _mWnd;
+    MeterWnd _mWndSecondary;
 
     NotifyIcon *_icon;
     HICON _iconImage;

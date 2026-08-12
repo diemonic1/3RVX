@@ -40,8 +40,10 @@ private:
     std::vector<VolumeTransformation *> _volumeTransformations;
 
     MeterWnd _mWnd;
+    MeterWnd _mWndSecondary;
     CallbackMeter *_callbackMeter;
     MeterWnd _muteWnd;
+    MeterWnd _muteWndSecondary;
     VolumeSlider *_volumeSlider;
 
     NotifyIcon *_icon;

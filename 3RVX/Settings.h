@@ -46,6 +46,12 @@ public:
     bool CurrentSkin(std::wstring skinName);
     std::wstring SkinXML();
     std::wstring SkinXML(std::wstring skinName);
+    std::wstring SecondaryMonitorSkin();
+    void SecondaryMonitorSkin(std::wstring skinName);
+    int PrimaryMonitorScale();
+    void PrimaryMonitorScale(int percent);
+    int SecondaryMonitorScale();
+    void SecondaryMonitorScale(int percent);
 
     /* Language */
     LanguageTranslator *Translator();
@@ -223,6 +229,9 @@ private:
     static constexpr const char *XML_OSD_Y = "osdY";
     static constexpr const char *XML_SHOWONSTART = "showOnStartup";
     static constexpr const char *XML_SKIN = "skin";
+    static constexpr const char *XML_SECONDARY_SKIN = "secondarySkin";
+    static constexpr const char *XML_SKIN_SCALE = "skinScale";
+    static constexpr const char *XML_SECONDARY_SKIN_SCALE = "secondarySkinScale";
     static constexpr const char *XML_SOUNDS = "soundEffects";
     static constexpr const char *XML_SUBSCRIBE_EJECT = "subscribeEjectEvents";
     static constexpr const char *XML_SUBSCRIBE_VOL = "subscribeVolumeEvents";

@@ -40,6 +40,30 @@ public:
     void BackgroundImage(Gdiplus::Bitmap *background);
     bool EnableGlass(Gdiplus::Bitmap *mask);
 
+    /// <summary>
+    /// Sets a scale factor (1.0 = 100%, unscaled) applied to the fully
+    /// composited notification image, used to make the notification larger
+    /// or smaller. Takes effect the next time Update() redraws the window.
+    /// </summary>
+    void Scale(float scale);
+
+    /// <summary>
+    /// Marks whether this window is actually assigned to any monitor in the
+    /// current display configuration. Inactive windows do not show
+    /// themselves (or their clones), but still forward Show()/Hide() calls to
+    /// their secondary twin (if any).
+    /// </summary>
+    void Active(bool active);
+    bool Active();
+
+    /// <summary>
+    /// Associates this window with a "twin" window that renders a different
+    /// skin (used for notifications shown on non-primary monitors). Show(),
+    /// Hide(), Update(), and MeterLevels() calls are automatically forwarded
+    /// to the twin. Pass <c>nullptr</c> to remove the association.
+    /// </summary>
+    void SecondaryTwin(MeterWnd *twin);
+
 protected:
     /// <summary>
     /// The composite (drawn) image for this window, including the background
@@ -53,6 +77,10 @@ protected:
 
     std::list<Meter*> _meters;
     std::vector<LayeredWnd *> _clones;
+
+    bool _active = true;
+    MeterWnd *_secondaryTwin = nullptr;
+    float _scale = 1.0f;
 
     int _visibleDuration;
     Animation *_hideAnimation;

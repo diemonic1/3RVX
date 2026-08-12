@@ -26,7 +26,9 @@
 VolumeOSD::VolumeOSD() :
 OSD(L"3RVX-VolumeDispatcher"),
 _mWnd(L"3RVX-VolumeOSD", L"3RVX-VolumeOSD"),
-_muteWnd(L"3RVX-MuteOSD", L"3RVX-MuteOSD") {
+_mWndSecondary(L"3RVX-VolumeOSD-Secondary", L"3RVX-VolumeOSD-Secondary"),
+_muteWnd(L"3RVX-MuteOSD", L"3RVX-MuteOSD"),
+_muteWndSecondary(L"3RVX-MuteOSD-Secondary", L"3RVX-MuteOSD-Secondary") {
 
     LoadSkin();
 
@@ -154,6 +156,9 @@ void VolumeOSD::UpdateDeviceMenu() {
 void VolumeOSD::LoadSkin() {
     SkinManager *skin = SkinManager::Instance();
 
+    float primaryScale = _settings->PrimaryMonitorScale() / 100.0f;
+    float secondaryScale = _settings->SecondaryMonitorScale() / 100.0f;
+
     /* Volume OSD */
     OSDComponent *volumeOSD = skin->VolumeOSD();
     _mWnd.BackgroundImage(volumeOSD->background);
@@ -170,7 +175,18 @@ void VolumeOSD::LoadSkin() {
     _defaultIncrement = (float) (10000 / volumeOSD->defaultUnits) / 10000.0f;
     CLOG(L"Default volume increment: %f", _defaultIncrement);
 
+    _mWnd.Scale(primaryScale);
     _mWnd.Update();
+
+    /* Volume OSD (secondary monitors) */
+    OSDComponent *volumeOSDSecondary = skin->VolumeOSD(true);
+    _mWndSecondary.BackgroundImage(volumeOSDSecondary->background);
+    _mWndSecondary.EnableGlass(volumeOSDSecondary->mask);
+    for (Meter *m : volumeOSDSecondary->meters) {
+        _mWndSecondary.AddMeter(m);
+    }
+    _mWndSecondary.Scale(secondaryScale);
+    _mWndSecondary.Update();
 
     /* Mute OSD */
     _muteWnd.BackgroundImage(skin->MuteOSD()->background);
@@ -179,11 +195,22 @@ void VolumeOSD::LoadSkin() {
         _muteWnd.AddMeter(m);
     }
     _muteWnd.MeterLevels(0);
+    _muteWnd.Scale(primaryScale);
     _muteWnd.Update();
 
+    OSDComponent *muteOSDSecondary = skin->MuteOSD(true);
+    _muteWndSecondary.BackgroundImage(muteOSDSecondary->background);
+    _muteWndSecondary.EnableGlass(muteOSDSecondary->mask);
+    for (Meter *m : muteOSDSecondary->meters) {
+        _muteWndSecondary.AddMeter(m);
+    }
+    _muteWndSecondary.MeterLevels(0);
+    _muteWndSecondary.Scale(secondaryScale);
+    _muteWndSecondary.Update();
+
     /* Now that everything is set up, initialize the meter windows. */
-    OSD::InitMeterWnd(_mWnd);
-    OSD::InitMeterWnd(_muteWnd);
+    OSD::InitMeterWnd(_mWnd, &_mWndSecondary);
+    OSD::InitMeterWnd(_muteWnd, &_muteWndSecondary);
 
     /* Set up notification icon */
     if (_settings->VolumeIconEnabled()) {
@@ -393,8 +420,8 @@ void VolumeOSD::OnDeviceChange() {
 }
 
 void VolumeOSD::OnDisplayChange() {
-    InitMeterWnd(_mWnd);
-    InitMeterWnd(_muteWnd);
+    InitMeterWnd(_mWnd, &_mWndSecondary);
+    InitMeterWnd(_muteWnd, &_muteWndSecondary);
 }
 
 void VolumeOSD::OnMenuEvent(WPARAM wParam) {

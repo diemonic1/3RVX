@@ -194,6 +194,22 @@
     <translation>Усе манітары, акрамя асноўнага</translation>
   </string>
   <string>
+    <original>Primary Monitor Skin:</original>
+    <translation>Скін асноўнага манітора:</translation>
+  </string>
+  <string>
+    <original>Secondary Monitors Skin:</original>
+    <translation>Скін другасных манітораў:</translation>
+  </string>
+  <string>
+    <original>Same as Primary Monitor</original>
+    <translation>Як на асноўным маніторы</translation>
+  </string>
+  <string>
+    <original>Notification Scale (%):</original>
+    <translation>Маштаб апавяшчэння (%):</translation>
+  </string>
+  <string>
     <original>Animation</original>
     <translation>Анімацыя</translation>
   </string>

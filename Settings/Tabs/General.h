@@ -19,6 +19,7 @@ public:
 
 private:
     std::wstring _url;
+    std::wstring _sameAsPrimaryStr = L"Same as Primary Monitor";
 
     virtual void Initialize();
     virtual void LoadSettings();
@@ -40,9 +41,16 @@ private:
     Button *_checkNow;
 
     GroupBox *_skinGroup;
+    Label *_skinLabel;
     ComboBox *_skin;
+    Label *_skinScaleLabel;
+    Spinner *_skinScale;
     Label *_author;
     Button *_website;
+    Label *_secondarySkinLabel;
+    ComboBox *_secondarySkin;
+    Label *_secondarySkinScaleLabel;
+    Spinner *_secondarySkinScale;
 
     GroupBox *_languageGroup;
     ComboBox *_language;
@@ -50,4 +58,7 @@ private:
 private:
     static const wchar_t REGKEY_NAME[];
     static const wchar_t REGKEY_RUN[];
+
+    const int MIN_SCALE = 50;
+    const int MAX_SCALE = 150;
 };

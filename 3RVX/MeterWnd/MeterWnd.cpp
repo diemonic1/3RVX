@@ -44,17 +44,44 @@ void MeterWnd::Update() {
         }
 
         Rect bgRect(0, 0, _background->GetWidth(), _background->GetHeight());
-        _composite = _background->Clone(bgRect, PixelFormat32bppARGB);
-        Graphics graphics(_composite);
+        Gdiplus::Bitmap *drawn
+            = _background->Clone(bgRect, PixelFormat32bppARGB);
+        Graphics graphics(drawn);
 
         for (Meter *meter : _meters) {
             CLOG(L"Drawing meter:\n%s", meter->ToString().c_str());
-            meter->Draw(_composite, &graphics);
+            meter->Draw(drawn, &graphics);
+        }
+
+        if (_scale != 1.0f) {
+            int scaledW = (int) (drawn->GetWidth() * _scale + 0.5f);
+            int scaledH = (int) (drawn->GetHeight() * _scale + 0.5f);
+            if (scaledW < 1) {
+                scaledW = 1;
+            }
+            if (scaledH < 1) {
+                scaledH = 1;
+            }
+
+            Gdiplus::Bitmap *scaled
+                = new Gdiplus::Bitmap(scaledW, scaledH, PixelFormat32bppARGB);
+            Graphics scaleGraphics(scaled);
+            scaleGraphics.SetInterpolationMode(InterpolationModeHighQualityBicubic);
+            scaleGraphics.SetPixelOffsetMode(PixelOffsetModeHighQuality);
+            scaleGraphics.DrawImage(drawn, 0, 0, scaledW, scaledH);
+            delete drawn;
+            _composite = scaled;
+        } else {
+            _composite = drawn;
         }
     }
 
     Bitmap(_composite);
     UpdateClones();
+
+    if (_secondaryTwin != nullptr) {
+        _secondaryTwin->Update();
+    }
 }
 
 void MeterWnd::AddMeter(Meter *meter) {
@@ -68,6 +95,10 @@ const std::list<Meter*>& MeterWnd::Meters() {
 void MeterWnd::MeterLevels(float value) {
     for (Meter *meter : _meters) {
         meter->Value(value);
+    }
+
+    if (_secondaryTwin != nullptr) {
+        _secondaryTwin->MeterLevels(value);
     }
 }
 
@@ -91,53 +122,85 @@ bool MeterWnd::EnableGlass(Gdiplus::Bitmap *mask) {
 }
 
 void MeterWnd::Show(bool animate) {
-    if (_visible == false) {
-        UpdateWindowPosition();
+    if (_active) {
+        if (_visible == false) {
+            UpdateWindowPosition();
 
-        bool disabled = false;
-        if (_disableFullscreen
-                && DisplayManager::IsFullscreen(Window::Handle())) {
-            CLOG(L"not showing (fs)");
-            disabled = true;
+            bool disabled = false;
+            if (_disableFullscreen
+                    && DisplayManager::IsFullscreen(Window::Handle())) {
+                CLOG(L"not showing (fs)");
+                disabled = true;
+            }
+
+            if (_disableDirectX
+                    && _d3dDevice->Occluded()) {
+                CLOG(L"not showing (occluded)");
+                disabled = true;
+            }
+
+
+            if (disabled == false) {
+                ShowWindow(Window::Handle(), SW_SHOW);
+                _visible = true;
+            }
         }
 
-        if (_disableDirectX
-                && _d3dDevice->Occluded()) {
-            CLOG(L"not showing (occluded)");
-            disabled = true;
-        }
+        ShowClones();
 
+        if (_visibleDuration > 0) {
+            SetTimer(Window::Handle(), TIMER_HIDE, _visibleDuration, NULL);
+            KillTimer(Window::Handle(), TIMER_OUT);
 
-        if (disabled == false) {
-            ShowWindow(Window::Handle(), SW_SHOW);
-            _visible = true;
+            if (_hideAnimation) {
+                _hideAnimation->Reset(this);
+            }
         }
     }
 
-    ShowClones();
-
-    if (_visibleDuration > 0) {
-        SetTimer(Window::Handle(), TIMER_HIDE, _visibleDuration, NULL);
-        KillTimer(Window::Handle(), TIMER_OUT);
-
-        if (_hideAnimation) {
-            _hideAnimation->Reset(this);
-        }
+    if (_secondaryTwin != nullptr) {
+        _secondaryTwin->Show(animate);
     }
 }
 
 void MeterWnd::Hide(bool animate) {
-    if (_visible == false) {
+    if (_active && _visible) {
+        if (animate && _hideAnimation) {
+            SetTimer(Window::Handle(),
+                TIMER_OUT, _hideAnimation->UpdateInterval(), NULL);
+        } else {
+            ShowWindow(Window::Handle(), SW_HIDE);
+            _visible = false;
+            HideClones();
+        }
+    }
+
+    if (_secondaryTwin != nullptr) {
+        _secondaryTwin->Hide(animate);
+    }
+}
+
+void MeterWnd::Active(bool active) {
+    _active = active;
+}
+
+bool MeterWnd::Active() {
+    return _active;
+}
+
+void MeterWnd::SecondaryTwin(MeterWnd *twin) {
+    _secondaryTwin = twin;
+}
+
+void MeterWnd::Scale(float scale) {
+    if (_scale == scale) {
         return;
     }
 
-    if (animate && _hideAnimation) {
-        SetTimer(Window::Handle(),
-            TIMER_OUT, _hideAnimation->UpdateInterval(), NULL);
-    } else {
-        ShowWindow(Window::Handle(), SW_HIDE);
-        _visible = false;
-        HideClones();
+    _scale = scale;
+    if (_composite != NULL) {
+        delete _composite;
+        _composite = NULL;
     }
 }
 

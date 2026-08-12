@@ -30,16 +30,63 @@ void OSD::HideOthers(OSDType except = All) {
     SendMessage(_masterWnd, _3RVX::WM_3RVX_CTRL, _3RVX::MSG_HIDEOSD, except);
 }
 
-void OSD::InitMeterWnd(MeterWnd &mWnd) {
+void OSD::ApplyCommonSettings(MeterWnd &mWnd) {
     mWnd.AlwaysOnTop(_settings->AlwaysOnTop());
     mWnd.HideAnimation(_settings->HideAnim(), _settings->HideSpeed());
     mWnd.VisibleDuration(_settings->HideDelay());
 
     mWnd.NoShowFullscreen(_settings->HideFullscreen());
     mWnd.NoShowD3DOccluded(_settings->HideDirectX());
+}
 
+void OSD::InitMeterWnd(MeterWnd &mWnd, MeterWnd *secondaryWnd) {
+    ApplyCommonSettings(mWnd);
     mWnd.DeleteClones();
+    mWnd.SecondaryTwin(nullptr);
+    mWnd.Active(true);
+
+    if (secondaryWnd != nullptr) {
+        ApplyCommonSettings(*secondaryWnd);
+        secondaryWnd->DeleteClones();
+        secondaryWnd->Active(true);
+    }
+
     std::vector<Monitor> monitors = ActiveMonitors();
+    HMONITOR primaryHandle = DisplayManager::Primary().Handle();
+
+    /* If a secondary skin is in use, split the active monitors into the
+     * primary monitor (which uses mWnd) and every other monitor (which uses
+     * secondaryWnd). Otherwise, every active monitor uses mWnd, matching the
+     * previous single-skin behavior. */
+    std::vector<Monitor> primaryGroup;
+    std::vector<Monitor> secondaryGroup;
+    for (Monitor &monitor : monitors) {
+        if (secondaryWnd != nullptr && monitor.Handle() != primaryHandle) {
+            secondaryGroup.push_back(monitor);
+        } else {
+            primaryGroup.push_back(monitor);
+        }
+    }
+
+    PositionMonitorGroup(mWnd, primaryGroup);
+
+    if (secondaryWnd != nullptr) {
+        PositionMonitorGroup(*secondaryWnd, secondaryGroup);
+        if (secondaryGroup.empty() == false) {
+            mWnd.SecondaryTwin(secondaryWnd);
+        }
+    }
+}
+
+void OSD::PositionMonitorGroup(
+        MeterWnd &mWnd, std::vector<Monitor> &monitors) {
+    if (monitors.empty()) {
+        /* This window isn't assigned to any monitor in the current display
+         * configuration; keep it inactive so it doesn't show itself. */
+        mWnd.Active(false);
+        return;
+    }
+
     for (unsigned int i = 1; i < monitors.size(); ++i) {
         mWnd.Clone();
     }

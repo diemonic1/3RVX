@@ -30,6 +30,7 @@ void General::Initialize() {
     _checkNow->OnClick = std::bind(&General::CheckForUpdates, this);
 
     _skinGroup = new GroupBox(GRP_SKIN, *this);
+    _skinLabel = new Label(LBL_SKIN, *this);
     _skin = new ComboBox(CMB_SKIN, *this);
     _skin->OnSelectionChange = [this]() {
         LoadSkinInfo(_skin->Selection());
@@ -44,6 +45,15 @@ void General::Initialize() {
         }
         return true;
     };
+    _skinScaleLabel = new Label(LBL_SKINSCALE, *this);
+    _skinScale = new Spinner(SP_SKINSCALE, *this);
+    _skinScale->Buddy(ED_SKINSCALE);
+
+    _secondarySkinLabel = new Label(LBL_SECONDARYSKIN, *this);
+    _secondarySkin = new ComboBox(CMB_SECONDARYSKIN, *this);
+    _secondarySkinScaleLabel = new Label(LBL_SECONDARYSKINSCALE, *this);
+    _secondarySkinScale = new Spinner(SP_SECONDARYSKINSCALE, *this);
+    _secondarySkinScale->Buddy(ED_SECONDARYSKINSCALE);
 
     _languageGroup = new GroupBox(GRP_LANGUAGE, *this);
     _language = new ComboBox(CMB_LANG, *this);
@@ -71,6 +81,30 @@ void General::LoadSettings() {
     }
     LoadSkinInfo(current);
 
+    /* Notification scale for the primary monitor */
+    _skinScale->Range(MIN_SCALE, MAX_SCALE);
+    _skinScale->Text(settings->PrimaryMonitorScale());
+
+    /* Skin used for notifications on secondary (non-primary) monitors */
+    _sameAsPrimaryStr = lt->Translate(_sameAsPrimaryStr);
+    _secondarySkin->AddItem(_sameAsPrimaryStr);
+    for (std::wstring skin : skins) {
+        _secondarySkin->AddItem(skin);
+    }
+
+    std::wstring currentSecondary = settings->SecondaryMonitorSkin();
+    if (currentSecondary == L"") {
+        currentSecondary = _sameAsPrimaryStr;
+    }
+    int secondaryIdx = _secondarySkin->Select(currentSecondary);
+    if (secondaryIdx == CB_ERR) {
+        _secondarySkin->Select(_sameAsPrimaryStr);
+    }
+
+    /* Notification scale for secondary monitors */
+    _secondarySkinScale->Range(MIN_SCALE, MAX_SCALE);
+    _secondarySkinScale->Text(settings->SecondaryMonitorScale());
+
     /* Populate the language box */
     std::list<std::wstring> languages = FindLanguages(
         settings->LanguagesDir().c_str());
@@ -96,6 +130,17 @@ void General::SaveSettings() {
     settings->AutomaticUpdates(_autoUpdate->Checked());
 
     settings->CurrentSkin(_skin->Selection());
+    settings->PrimaryMonitorScale(_skinScale->TextAsInt());
+
+    std::wstring secondarySkin = _secondarySkin->Selection();
+    if (secondarySkin == _sameAsPrimaryStr) {
+        /* Note: CMB_SECONDARYSKIN uses CBS_SORT, so "Same as Primary
+         * Monitor" is not necessarily at a fixed index -- compare by the
+         * (translated) string instead. */
+        secondarySkin = L"";
+    }
+    settings->SecondaryMonitorSkin(secondarySkin);
+    settings->SecondaryMonitorScale(_secondarySkinScale->TextAsInt());
 
     std::wstring lang = _language->Selection();
     if (lang != settings->LanguageName()) {

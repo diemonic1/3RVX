@@ -194,6 +194,22 @@
     <translation>Ana Ekran Hariç Tüm Ekranlar</translation>
   </string>
   <string>
+    <original>Primary Monitor Skin:</original>
+    <translation>Ana Monitör Teması:</translation>
+  </string>
+  <string>
+    <original>Secondary Monitors Skin:</original>
+    <translation>İkincil Monitörler Teması:</translation>
+  </string>
+  <string>
+    <original>Same as Primary Monitor</original>
+    <translation>Ana Monitör ile Aynı</translation>
+  </string>
+  <string>
+    <original>Notification Scale (%):</original>
+    <translation>Bildirim Ölçeği (%):</translation>
+  </string>
+  <string>
     <original>Animation</original>
     <translation>Animasyon</translation>
   </string>

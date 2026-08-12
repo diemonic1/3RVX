@@ -15,14 +15,22 @@
 
 EjectOSD::EjectOSD() :
 OSD(L"3RVX-EjectDispatcher"),
-_mWnd(L"3RVX-EjectOSD", L"3RVX-EjectOSD") {
+_mWnd(L"3RVX-EjectOSD", L"3RVX-EjectOSD"),
+_mWndSecondary(L"3RVX-EjectOSD-Secondary", L"3RVX-EjectOSD-Secondary") {
 
     SkinManager *skin = SkinManager::Instance();
     _mWnd.BackgroundImage(skin->EjectOSD()->background);
     _mWnd.EnableGlass(skin->EjectOSD()->mask);
+    _mWnd.Scale(_settings->PrimaryMonitorScale() / 100.0f);
     _mWnd.Update();
 
-    OSD::InitMeterWnd(_mWnd);
+    OSDComponent *secondary = skin->EjectOSD(true);
+    _mWndSecondary.BackgroundImage(secondary->background);
+    _mWndSecondary.EnableGlass(secondary->mask);
+    _mWndSecondary.Scale(_settings->SecondaryMonitorScale() / 100.0f);
+    _mWndSecondary.Update();
+
+    OSD::InitMeterWnd(_mWnd, &_mWndSecondary);
 
     if (_settings->EjectIconEnabled()) {
         _iconImage = skin->EjectIcon();
@@ -186,7 +194,7 @@ wchar_t EjectOSD::MaskToDriveLetter(DWORD mask) {
 }
 
 void EjectOSD::OnDisplayChange() {
-    InitMeterWnd(_mWnd);
+    InitMeterWnd(_mWnd, &_mWndSecondary);
 }
 
 LRESULT

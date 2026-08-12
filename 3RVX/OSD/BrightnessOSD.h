@@ -19,6 +19,7 @@ public:
 
 private:
     MeterWnd _mWnd;
+    MeterWnd _mWndSecondary;
     BrightnessController *_brightnessCtrl;
 
     virtual void OnDisplayChange();

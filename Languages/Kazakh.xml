@@ -194,6 +194,22 @@
     <translation>Негізгіден басқа барлық мониторлар</translation>
   </string>
   <string>
+    <original>Primary Monitor Skin:</original>
+    <translation>Негізгі монитор скині:</translation>
+  </string>
+  <string>
+    <original>Secondary Monitors Skin:</original>
+    <translation>Қосымша мониторлар скіні:</translation>
+  </string>
+  <string>
+    <original>Same as Primary Monitor</original>
+    <translation>Негізгі монитордегідей</translation>
+  </string>
+  <string>
+    <original>Notification Scale (%):</original>
+    <translation>Хабарлама масштабы (%):</translation>
+  </string>
+  <string>
     <original>Animation</original>
     <translation>Анимация</translation>
   </string>

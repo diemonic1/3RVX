@@ -195,6 +195,22 @@
     <original>All Monitors Except Primary</original>
     <translation>Todos los monitores excepto el principal</translation>
   </string>
+  <string>
+    <original>Primary Monitor Skin:</original>
+    <translation>Skin del monitor principal:</translation>
+  </string>
+  <string>
+    <original>Secondary Monitors Skin:</original>
+    <translation>Skin de monitores secundarios:</translation>
+  </string>
+  <string>
+    <original>Same as Primary Monitor</original>
+    <translation>Igual que el monitor principal</translation>
+  </string>
+  <string>
+    <original>Notification Scale (%):</original>
+    <translation>Escala de la notificación (%):</translation>
+  </string>
 
   <string>
     <original>Animation</original>

@@ -194,6 +194,22 @@
     <translation>Все мониторы, кроме основного</translation>
   </string>
   <string>
+    <original>Primary Monitor Skin:</original>
+    <translation>Скин основного монитора:</translation>
+  </string>
+  <string>
+    <original>Secondary Monitors Skin:</original>
+    <translation>Скин второстепенных мониторов:</translation>
+  </string>
+  <string>
+    <original>Same as Primary Monitor</original>
+    <translation>Как на основном мониторе</translation>
+  </string>
+  <string>
+    <original>Notification Scale (%):</original>
+    <translation>Масштаб уведомления (%):</translation>
+  </string>
+  <string>
     <original>Animation</original>
     <translation>Анимация</translation>
   </string>
