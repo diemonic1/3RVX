@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<skin>
+  <info>
+    <author>D!EMONIC</author>
+    <website>https://github.com/diemonic1</website>
+  </info>
+
+  <osds>
+    <volume background="OSD/background.png" defaultUnits="50">
+      <meter type="Text" format="[[PERC]]"
+             font="Segoe UI" size="13" color="FFFFFF"
+             transparency="255" align="center" x="211" y="16"
+             width="60" height="24"/>
+      <meter type="HorizontalBar" image="OSD/bar.png"
+             x="85.8" y="25.2" units="66"
+             colorTransform="FF00FF"
+             colorTransformTransparency="255"/>
+      <iconset location="Icons/Volume"/>
+      <sound file="sound.wav"/>
+    </volume>
+    <mute background="OSD/backgroundMute.png">
+      <meter type="VerticalSliderKnob" image="OSD/knob.png"
+             x="32" y="24" width="13" height="95"/>
+      <meter type="image" image="OSD/mute.png" x="31" y="131"/>
+    </mute>
+
+    <eject background="OSD/eject.png">
+      <icon file="Icons/Eject.ico"/>
+    </eject>
+    <brightness background="OSD/background.png" defaultUnits="50">
+      <meter type="HorizontalBar" image="OSD/meter.png"
+             x="40" y="198" units="19"/>
+    </brightness>
+  </osds>
+
+  <sliders>
+    <volume background="Slider/background.png">
+      <slider type="vertical" image="Slider/knob.png"
+              x="38" y="24" width="6" height="118"/>
+    </volume>
+  </sliders>
+</skin>
