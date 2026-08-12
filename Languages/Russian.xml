@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<translation author="PEPEi" version="1">
+<translation version="1">
 
-  <language name="Polski" id="pl" regions="pl"/>
-  <author name="PEPEi" website=""/>
+  <language name="Русский" id="ru" regions="ru"/>
+  <author name="3RVX Contributors" website=""/>
 
   <!-- General Strings -->
   <string>
     <original>3RVX Settings</original>
-    <translation>Ustawienia 3RVX</translation>
+    <translation>Настройки 3RVX</translation>
   </string>
   <string>
     <original>OK</original>
-    <translation>OK</translation>
+    <translation>ОК</translation>
   </string>
   <string>
     <original>Cancel</original>
-    <translation>Anuluj</translation>
+    <translation>Отмена</translation>
   </string>
   <string>
     <original>Apply</original>
-    <translation>Zastosuj</translation>
+    <translation>Применить</translation>
   </string>
 
   <!-- Notification Icon Menu Strings -->
   <string>
     <original>Settings</original>
-    <translation>Ustawienia</translation>
+    <translation>Настройки</translation>
   </string>
   <string>
     <original>Audio Device</original>
-    <translation>Urządzenie audio</translation>
+    <translation>Аудиоустройство</translation>
   </string>
   <string>
     <original>Mixer</original>
-    <translation>Mikser</translation>
+    <translation>Микшер</translation>
   </string>
   <string>
     <original>Exit</original>
-    <translation>Wyjście</translation>
+    <translation>Выход</translation>
   </string>
   <string>
     <original>Muted</original>
-    <translation>Wyciszono</translation>
+    <translation>Без звука</translation>
   </string>
 
   <!-- Tab Names -->
   <string>
     <original>General</original>
-    <translation>Główne</translation>
+    <translation>Общие</translation>
   </string>
   <string>
     <original>Display</original>
-    <translation>Wyświetlanie</translation>
+    <translation>Экран</translation>
   </string>
   <string>
     <original>OSD</original>
@@ -59,351 +59,351 @@
   </string>
   <string>
     <original>Hotkeys</original>
-    <translation>Klawisze skrótów</translation>
+    <translation>Горячие клавиши</translation>
   </string>
   <string>
     <original>About</original>
-    <translation>Informacje</translation>
+    <translation>О программе</translation>
   </string>
 
   <!-- General Tab -->
   <string>
     <original>Behavior</original>
-    <translation>Zachowanie</translation>
+    <translation>Поведение</translation>
   </string>
   <string>
     <original>Run on Windows startup</original>
-    <translation>Uruchom razem z Windows</translation>
+    <translation>Запускать при старте Windows</translation>
   </string>
   <string>
     <original>Show volume OSD on startup</original>
-    <translation>Pokaż OSD głośności przy uruchomieniu</translation>
+    <translation>Показывать OSD громкости при запуске</translation>
   </string>
   <string>
     <original>Enable volume notification icon</original>
-    <translation>Włącz ikonę powiadomień głośności</translation>
+    <translation>Включить значок громкости в области уведомлений</translation>
   </string>
   <string>
     <original>Enable sound effects</original>
-    <translation>Włącz efekty dźwiękowe</translation>
+    <translation>Включить звуковые эффекты</translation>
   </string>
   <string>
     <original>Automatic updates</original>
-    <translation>Automatyczne aktualizacje</translation>
+    <translation>Автоматические обновления</translation>
   </string>
   <string>
     <original>Check Now</original>
-    <translation>Sprawdź teraz</translation>
+    <translation>Проверить сейчас</translation>
   </string>
   <string>
     <original>Skin</original>
-    <translation>Skórka</translation>
+    <translation>Скин</translation>
   </string>
   <string>
     <original>Author: {1}</original>
-    <translation>Autor: {1}</translation>
+    <translation>Автор: {1}</translation>
   </string>
   <string>
     <original>Website</original>
-    <translation>Strona internetowa</translation>
+    <translation>Веб-сайт</translation>
   </string>
   <string>
     <original>Language</original>
-    <translation>Język</translation>
+    <translation>Язык</translation>
   </string>
 
   <!-- Display Tab -->
   <string>
     <original>Visibility</original>
-    <translation>Widoczność</translation>
+    <translation>Видимость</translation>
   </string>
   <string>
     <original>Keep on top of other windows</original>
-    <translation>Zawsze na wierzchu</translation>
+    <translation>Отображать поверх других окон</translation>
   </string>
   <string>
     <original>Hide when other programs are fullscreen</original>
-    <translation>Ukryj, gdy inne programy są w pełnym ekranie</translation>
+    <translation>Скрывать, если другая программа работает в полноэкранном режиме</translation>
   </string>
   <string>
     <original>Hide when DirectX applications are fullscreen</original>
-    <translation>Ukryj, gdy aplikacje DirectX są w pełnym ekranie</translation>
+    <translation>Скрывать, если приложение DirectX работает в полноэкранном режиме</translation>
   </string>
   <string>
     <original>Position</original>
-    <translation>Pozycja</translation>
+    <translation>Положение</translation>
   </string>
   <string>
     <original>Top</original>
-    <translation>Góra</translation>
+    <translation>Сверху</translation>
   </string>
   <string>
     <original>Left</original>
-    <translation>Lewa</translation>
+    <translation>Слева</translation>
   </string>
   <string>
     <original>Right</original>
-    <translation>Prawa</translation>
+    <translation>Справа</translation>
   </string>
   <string>
     <original>Bottom</original>
-    <translation>Dół</translation>
+    <translation>Снизу</translation>
   </string>
   <string>
     <original>Center</original>
-    <translation>Środek</translation>
+    <translation>По центру</translation>
   </string>
   <string>
     <original>Top-left</original>
-    <translation>Górny lewy</translation>
+    <translation>Сверху слева</translation>
   </string>
   <string>
     <original>Top-right</original>
-    <translation>Górny prawy</translation>
+    <translation>Сверху справа</translation>
   </string>
   <string>
     <original>Bottom-left</original>
-    <translation>Dolny lewy</translation>
+    <translation>Снизу слева</translation>
   </string>
   <string>
     <original>Bottom-right</original>
-    <translation>Dolny prawy</translation>
+    <translation>Снизу справа</translation>
   </string>
   <string>
     <original>Custom</original>
-    <translation>Niestandardowa</translation>
+    <translation>Другое</translation>
   </string>
   <string>
     <original>Custom distance from screen edge (px):</original>
-    <translation>Niestandardowa odległość od krawędzi ekranu (px):</translation>
+    <translation>Отступ от края экрана (пикс.):</translation>
   </string>
   <string>
     <original>Display Device:</original>
-    <translation>Urządzenie wyświetlające:</translation>
+    <translation>Устройство отображения:</translation>
   </string>
   <string>
     <original>Primary Monitor</original>
-    <translation>Główny monitor</translation>
+    <translation>Основной монитор</translation>
   </string>
   <string>
     <original>All Monitors</original>
-    <translation>Wszystkie monitory</translation>
+    <translation>Все мониторы</translation>
   </string>
   <string>
     <original>All Monitors Except Primary</original>
-    <translation>Wszystkie monitory oprócz głównego</translation>
+    <translation>Все мониторы, кроме основного</translation>
   </string>
   <string>
     <original>Animation</original>
-    <translation>Animacja</translation>
+    <translation>Анимация</translation>
   </string>
   <string>
     <original>None</original>
-    <translation>Brak</translation>
+    <translation>Нет</translation>
   </string>
   <string>
     <original>Fade</original>
-    <translation>Zanikanie</translation>
+    <translation>Затухание</translation>
   </string>
   <string>
     <original>Hide Delay (ms):</original>
-    <translation>Opóźnienie ukrycia (ms):</translation>
+    <translation>Задержка скрытия (мс):</translation>
   </string>
   <string>
     <original>Speed (ms):</original>
-    <translation>Szybkość (ms):</translation>
+    <translation>Скорость (мс):</translation>
   </string>
 
   <!-- OSD Tab -->
   <string>
     <original>Volume</original>
-    <translation>Głośność</translation>
+    <translation>Громкость</translation>
   </string>
   <string>
     <original>Brightness</original>
-    <translation>Jasność</translation>
+    <translation>Яркость</translation>
   </string>
   <string>
     <original>Eject</original>
-    <translation>Wysuń</translation>
+    <translation>Извлечение</translation>
   </string>
   <string>
     <original>Keyboard</original>
-    <translation>Klawiatura</translation>
+    <translation>Клавиатура</translation>
   </string>
   <string>
     <original>Enable notification icon</original>
-    <translation>Włącz ikonę powiadomień</translation>
+    <translation>Включить значок в области уведомлений</translation>
   </string>
 
   <!-- Hotkeys Tab -->
   <string>
     <original>Action</original>
-    <translation>Akcja</translation>
+    <translation>Действие</translation>
   </string>
   <string>
     <original>Hotkey Editor</original>
-    <translation>Edytor klawiszy skrótów</translation>
+    <translation>Редактор горячих клавиш</translation>
   </string>
   <string>
     <original>Keys:</original>
-    <translation>Klawisze:</translation>
+    <translation>Клавиши:</translation>
   </string>
   <string>
     <original>Hotkey Input</original>
-    <translation>Wprowadzanie klawisza skrótu</translation>
+    <translation>Ввод горячей клавиши</translation>
   </string>
   <string>
     <original>Enter hotkeys now...</original>
-    <translation>Wprowadź teraz klawisze skrótu...</translation>
+    <translation>Введите горячие клавиши...</translation>
   </string>
   <string>
     <original>Action:</original>
-    <translation>Akcja:</translation>
+    <translation>Действие:</translation>
   </string>
   <string>
     <original>Amount:</original>
-    <translation>Wartość:</translation>
+    <translation>Величина:</translation>
   </string>
   <string>
     <original>Volume Units</original>
-    <translation>Jednostki głośności</translation>
+    <translation>Единицы громкости</translation>
   </string>
   <string>
     <original>Percent</original>
-    <translation>Procent</translation>
+    <translation>Процент</translation>
   </string>
   <string>
     <original>Drive:</original>
-    <translation>Napęd:</translation>
+    <translation>Привод:</translation>
   </string>
   <string>
     <original>Key:</original>
-    <translation>Klawisz:</translation>
+    <translation>Клавиша:</translation>
   </string>
   <string>
     <original>Play/Pause</original>
-    <translation>Odtwarzaj/Pauza</translation>
+    <translation>Воспроизведение/Пауза</translation>
   </string>
   <string>
     <original>Stop</original>
-    <translation>Stop</translation>
+    <translation>Стоп</translation>
   </string>
   <string>
     <original>Next</original>
-    <translation>Następny</translation>
+    <translation>Следующий</translation>
   </string>
   <string>
     <original>Previous</original>
-    <translation>Poprzedni</translation>
+    <translation>Предыдущий</translation>
   </string>
   <string>
     <original>VK Code (Hex):</original>
-    <translation>Kod VK (szesnastkowy):</translation>
+    <translation>Код VK (Hex):</translation>
   </string>
   <string>
     <original>Path:</original>
-    <translation>Ścieżka:</translation>
+    <translation>Путь:</translation>
   </string>
 
   <!-- Hotkey Actions -->
   <string>
     <original>Increase Volume</original>
-    <translation>Zwiększ głośność</translation>
+    <translation>Увеличить громкость</translation>
   </string>
   <string>
     <original>Increase Volume {1}%</original>
-    <translation>Zwiększ głośność o {1}%</translation>
+    <translation>Увеличить громкость на {1}%</translation>
   </string>
   <string>
     <original>Increase Volume {1} units</original>
-    <translation>Zwiększ głośność o {1} jednostek</translation>
+    <translation>Увеличить громкость на {1} единиц</translation>
   </string>
   <string>
     <original>Decrease Volume</original>
-    <translation>Zmniejsz głośność</translation>
+    <translation>Уменьшить громкость</translation>
   </string>
   <string>
     <original>Decrease Volume {1}%</original>
-    <translation>Zmniejsz głośność o {1}%</translation>
+    <translation>Уменьшить громкость на {1}%</translation>
   </string>
   <string>
     <original>Decrease Volume {1} units</original>
-    <translation>Zmniejsz głośność o {1} jednostek</translation>
+    <translation>Уменьшить громкость на {1} единиц</translation>
   </string>
   <string>
     <original>Set Volume</original>
-    <translation>Ustaw głośność</translation>
+    <translation>Установить громкость</translation>
   </string>
   <string>
     <original>Set Volume: {1}%</original>
-    <translation>Ustaw głośność: {1}%</translation>
+    <translation>Установить громкость: {1}%</translation>
   </string>
   <string>
     <original>Set Volume: {1} units</original>
-    <translation>Ustaw głośność: {1} jednostek</translation>
+    <translation>Установить громкость: {1} единиц</translation>
   </string>
   <string>
     <original>Mute</original>
-    <translation>Wycisz</translation>
+    <translation>Без звука</translation>
   </string>
   <string>
     <original>Show Volume Slider</original>
-    <translation>Pokaż suwak głośności</translation>
+    <translation>Показать регулятор громкости</translation>
   </string>
   <string>
     <original>Eject Drive</original>
-    <translation>Wysuń napęd</translation>
+    <translation>Извлечь диск</translation>
   </string>
   <string>
     <original>Eject Drive: {1}</original>
-    <translation>Wysuń napęd: {1}</translation>
+    <translation>Извлечь диск: {1}</translation>
   </string>
   <string>
     <original>Eject Last Disk</original>
-    <translation>Wysuń ostatni dysk</translation>
+    <translation>Извлечь последний диск</translation>
   </string>
   <string>
     <original>Media Key</original>
-    <translation>Klawisz multimedialny</translation>
+    <translation>Мультимедийная клавиша</translation>
   </string>
   <string>
     <original>Media Key: {1}</original>
-    <translation>Klawisz multimedialny: {1}</translation>
+    <translation>Мультимедийная клавиша: {1}</translation>
   </string>
   <string>
     <original>Virtual Key</original>
-    <translation>Klawisz wirtualny</translation>
+    <translation>Виртуальная клавиша</translation>
   </string>
   <string>
     <original>Virtual Key: 0x{1}</original>
-    <translation>Klawisz wirtualny: 0x{1}</translation>
+    <translation>Виртуальная клавиша: 0x{1}</translation>
   </string>
   <string>
     <original>Run</original>
-    <translation>Uruchom</translation>
+    <translation>Запустить</translation>
   </string>
   <string>
     <original>Run: {1}</original>
-    <translation>Uruchom: {1}</translation>
+    <translation>Запустить: {1}</translation>
   </string>
   <string>
     <original>Enable/Disable OSD</original>
-    <translation>Włącz/Wyłącz OSD</translation>
+    <translation>Включить/выключить OSD</translation>
   </string>
   <string>
     <original>Open Settings Dialog</original>
-    <translation>Otwórz okno ustawień</translation>
+    <translation>Открыть окно настроек</translation>
   </string>
   <string>
     <original>Exit 3RVX</original>
-    <translation>Zamknij 3RVX</translation>
+    <translation>Выйти из 3RVX</translation>
   </string>
 
   <!-- Update Strings -->
   <string>
     <original>Update Available</original>
-    <translation>Dostępna aktualizacja</translation>
+    <translation>Доступно обновление</translation>
   </string>
   <string>
     <original>3RVX {1}</original>
@@ -411,33 +411,33 @@
   </string>
   <string>
     <original>Install</original>
-    <translation>Zainstaluj</translation>
+    <translation>Установить</translation>
   </string>
   <string>
     <original>Ignore version</original>
-    <translation>Ignoruj tę wersję</translation>
+    <translation>Игнорировать версию</translation>
   </string>
   <string>
     <original>Remind me later</original>
-    <translation>Przypomnij później</translation>
+    <translation>Напомнить позже</translation>
   </string>
   <string>
     <original>Downloading...</original>
-    <translation>Pobieranie...</translation>
+    <translation>Загрузка...</translation>
   </string>
 
   <!-- Error Messages -->
   <string>
     <original>File not found:\n{1}</original>
-    <translation>Nie znaleziono pliku:\n{1}</translation>
+    <translation>Файл не найден:\n{1}</translation>
   </string>
   <string>
     <original>Could not locate XML tag: {1}</original>
-    <translation>Nie można odnaleźć znacznika XML: {1}</translation>
+    <translation>Не удалось найти тег XML: {1}</translation>
   </string>
   <string>
     <original>An unknown error occurred: ID #{1}</original>
-    <translation>Wystąpił nieznany błąd: ID #{1}</translation>
+    <translation>Произошла неизвестная ошибка: ID #{1}</translation>
   </string>
 
 </translation>

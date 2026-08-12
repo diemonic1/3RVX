@@ -1,290 +1,443 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ArrayOfWord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<!-- Language File Author: xxxxx    -->
-<!-- Supported version of 3RVX: 2.3 -->
-<!-- General Words -->
-  <word>
-    <key>Settings</key>
-    <translation>Configurações</translation>
-  </word>
-  <word>
-    <key>Exit</key>
-    <translation>Sair</translation>
-  </word>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<translation author="Johnny Wolinger" version="1">
 
+  <language name="Português Brasil" id="pt" regions="br"/>
+  <author name="Johnny Wolinger" website=""/>
 
-<!-- Settings Dialog Buttons -->
-  <word>
-    <key>Defaults</key>
-    <translation>Padrões</translation>
-  </word>
-  <word>
-    <key>Cancel</key>
+  <!-- General Strings -->
+  <string>
+    <original>3RVX Settings</original>
+    <translation>Configurações do 3RVX</translation>
+  </string>
+  <string>
+    <original>OK</original>
+    <translation>OK</translation>
+  </string>
+  <string>
+    <original>Cancel</original>
     <translation>Cancelar</translation>
-  </word>
-  <word>
-    <key>Save</key>
-    <translation>Salvar</translation>
-  </word>
-  <word>
-    <key>Select Key...</key>
-    <translation>Selecionar botão...</translation>
-  </word>
+  </string>
+  <string>
+    <original>Apply</original>
+    <translation>Aplicar</translation>
+  </string>
 
-
-<!-- Settings Tabs -->
-  <word>
-    <key>General</key>
-    <translation>Geral</translation>
-  </word>
-  <word>
-    <key>Display</key>
-    <translation>Display</translation>
-  </word>
-  <word>
-    <key>Hotkey Setup</key>
-    <translation>Teclas de atalho</translation>
-  </word>
-  <word>
-    <key>Skin Chooser</key>
-    <translation>Temas</translation>
-  </word>
-  <word>
-    <key>About</key>
-    <translation>Sobre</translation>
-  </word>
-
-
-<!-- General Tab -->
-  <word>
-    <key>Behavior</key>
-    <translation>Comportamento</translation>
-  </word>
-  <word>
-    <key>Run on Windows startup</key>
-    <translation>Iniciar com Windows</translation>
-  </word>
-  <word>
-    <key>Play sounds</key>
-    <translation>Tocar sons</translation>
-  </word>
-  <word>
-    <key>Custom volume change amount:</key>
-    <translation>Taxa de volume personalizado:</translation>
-  </word>
-
-  <word>
-    <key>Mixer</key>
+  <!-- Notification Icon Menu Strings -->
+  <string>
+    <original>Settings</original>
+    <translation>Configurações</translation>
+  </string>
+  <string>
+    <original>Audio Device</original>
+    <translation>Dispositivo de Áudio</translation>
+  </string>
+  <string>
+    <original>Mixer</original>
     <translation>Mixer</translation>
-  </word>
-  <word>
-    <key>Control Wave instead of Master Volume</key>
-    <translation>Controlar onda no botão mestre</translation>
-  </word>
-  <word>
-    <key>Use custom mixer program on tray click</key>
-    <translation>Usar mixer personalizado na área de notificação</translation>
-  </word>
-  <word>
-    <key>Choose...</key>
-    <translation>Escolher...</translation>
-  </word>
-  <word>
-    <key>Filename: </key>
-    <translation>Nome do arquivo: </translation>
-  </word>
-
-  <word>
-    <key>Language</key>
-    <translation>Idioma</translation>
-  </word>
-  <word>
-    <key>Load</key>
-    <translation>Carregar</translation>
-  </word>
-
-
-<!-- Display Tab -->
-  <word>
-    <key>Visibility</key>
-    <translation>Visibilidade</translation>
-  </word>
-  <word>
-    <key>Keep above other windows</key>
-    <translation>Manter sobre outras janelas</translation>
-  </word>
-  <word>
-    <key>Display icon in system tray</key>
-    <translation>Mostrar icone na área de notificação</translation>
-  </word>
-  <word>
-    <key>Hide when other programs are fullscreen</key>
-    <translation>Esconder quando outros programas estiverem em tela cheia</translation>
-  </word>
-  <word>
-    <key>Fade Delay:</key>
-    <translation>Tempo de esmaecimento:</translation>
-  </word>
-  <word>
-    <key>Fade Speed:</key>
-    <translation>Velocidade de esmaecimento:</translation>
-  </word>
-
-  <word>
-    <key>Position</key>
-    <translation>Posição</translation>
-  </word>
-  <word>
-    <key>Display on Monitor:</key>
-    <translation>Display no monitor</translation>
-  </word>
-  <word>
-    <key>Default</key>
-    <translation>Padrões</translation>
-  </word>
-  <word>
-    <key>Centered</key>
-    <translation>Centralizado</translation>
-  </word>
-  <word>
-    <key>Custom Location:</key>
-    <translation>Posição personalizada:</translation>
-  </word>
-
-
-<!-- Hotkey tab -->
-  <word>
-    <key>Function</key>
-    <translation>Função</translation>
-  </word>
-  <word>
-    <key>Keys</key>
-    <translation>Teclas</translation>
-  </word>
-
-  <word>
-    <key>Add</key>
-    <translation>Adicionar</translation>
-  </word>
-  <word>
-    <key>Delete</key>
-    <translation>Deletar</translation>
-  </word>
-
-  <word>
-    <key>Action:</key>
-    <translation>Ação:</translation>
-  </word>
-  <word>
-    <key>Volume Up</key>
-    <translation>Aumentar volume:</translation>
-  </word>
-  <word>
-    <key>Volume Down</key>
-    <translation>Diminuir volume:</translation>
-  </word>
-  <word>
-    <key>Mute</key>
+  </string>
+  <string>
+    <original>Exit</original>
+    <translation>Sair</translation>
+  </string>
+  <string>
+    <original>Muted</original>
     <translation>Mudo</translation>
-  </word>
-  <word>
-    <key>Eject</key>
+  </string>
+
+  <!-- Tab Names -->
+  <string>
+    <original>General</original>
+    <translation>Geral</translation>
+  </string>
+  <string>
+    <original>Display</original>
+    <translation>Exibição</translation>
+  </string>
+  <string>
+    <original>OSD</original>
+    <translation>OSD</translation>
+  </string>
+  <string>
+    <original>Hotkeys</original>
+    <translation>Atalhos</translation>
+  </string>
+  <string>
+    <original>About</original>
+    <translation>Sobre</translation>
+  </string>
+
+  <!-- General Tab -->
+  <string>
+    <original>Behavior</original>
+    <translation>Comportamento</translation>
+  </string>
+  <string>
+    <original>Run on Windows startup</original>
+    <translation>Iniciar com o Windows</translation>
+  </string>
+  <string>
+    <original>Show volume OSD on startup</original>
+    <translation>Mostrar OSD de volume ao iniciar</translation>
+  </string>
+  <string>
+    <original>Enable volume notification icon</original>
+    <translation>Habilitar ícone de notificação de volume</translation>
+  </string>
+  <string>
+    <original>Enable sound effects</original>
+    <translation>Habilitar efeitos sonoros</translation>
+  </string>
+  <string>
+    <original>Automatic updates</original>
+    <translation>Atualizações automáticas</translation>
+  </string>
+  <string>
+    <original>Check Now</original>
+    <translation>Verificar agora</translation>
+  </string>
+  <string>
+    <original>Skin</original>
+    <translation>Tema</translation>
+  </string>
+  <string>
+    <original>Author: {1}</original>
+    <translation>Autor: {1}</translation>
+  </string>
+  <string>
+    <original>Website</original>
+    <translation>Website</translation>
+  </string>
+  <string>
+    <original>Language</original>
+    <translation>Idioma</translation>
+  </string>
+
+  <!-- Display Tab -->
+  <string>
+    <original>Visibility</original>
+    <translation>Visibilidade</translation>
+  </string>
+  <string>
+    <original>Keep on top of other windows</original>
+    <translation>Manter sobre outras janelas</translation>
+  </string>
+  <string>
+    <original>Hide when other programs are fullscreen</original>
+    <translation>Esconder quando outros programas estiverem em tela cheia</translation>
+  </string>
+  <string>
+    <original>Hide when DirectX applications are fullscreen</original>
+    <translation>Esconder quando aplicativos DirectX estiverem em tela cheia</translation>
+  </string>
+  <string>
+    <original>Position</original>
+    <translation>Posição</translation>
+  </string>
+  <string>
+    <original>Top</original>
+    <translation>Superior</translation>
+  </string>
+  <string>
+    <original>Left</original>
+    <translation>Esquerda</translation>
+  </string>
+  <string>
+    <original>Right</original>
+    <translation>Direita</translation>
+  </string>
+  <string>
+    <original>Bottom</original>
+    <translation>Inferior</translation>
+  </string>
+  <string>
+    <original>Center</original>
+    <translation>Centro</translation>
+  </string>
+  <string>
+    <original>Top-left</original>
+    <translation>Superior esquerdo</translation>
+  </string>
+  <string>
+    <original>Top-right</original>
+    <translation>Superior direito</translation>
+  </string>
+  <string>
+    <original>Bottom-left</original>
+    <translation>Inferior esquerdo</translation>
+  </string>
+  <string>
+    <original>Bottom-right</original>
+    <translation>Inferior direito</translation>
+  </string>
+  <string>
+    <original>Custom</original>
+    <translation>Personalizado</translation>
+  </string>
+  <string>
+    <original>Custom distance from screen edge (px):</original>
+    <translation>Distância personalizada da borda da tela (px):</translation>
+  </string>
+  <string>
+    <original>Display Device:</original>
+    <translation>Dispositivo de exibição:</translation>
+  </string>
+  <string>
+    <original>Primary Monitor</original>
+    <translation>Monitor principal</translation>
+  </string>
+  <string>
+    <original>All Monitors</original>
+    <translation>Todos os monitores</translation>
+  </string>
+  <string>
+    <original>All Monitors Except Primary</original>
+    <translation>Todos os monitores, exceto o principal</translation>
+  </string>
+  <string>
+    <original>Animation</original>
+    <translation>Animação</translation>
+  </string>
+  <string>
+    <original>None</original>
+    <translation>Nenhuma</translation>
+  </string>
+  <string>
+    <original>Fade</original>
+    <translation>Esmaecer</translation>
+  </string>
+  <string>
+    <original>Hide Delay (ms):</original>
+    <translation>Atraso para esconder (ms):</translation>
+  </string>
+  <string>
+    <original>Speed (ms):</original>
+    <translation>Velocidade (ms):</translation>
+  </string>
+
+  <!-- OSD Tab -->
+  <string>
+    <original>Volume</original>
+    <translation>Volume</translation>
+  </string>
+  <string>
+    <original>Brightness</original>
+    <translation>Brilho</translation>
+  </string>
+  <string>
+    <original>Eject</original>
     <translation>Ejetar</translation>
-  </word>
-  <word>
-    <key>Settings Window</key>
-    <translation>Configuração da janela</translation>
-  </word>
+  </string>
+  <string>
+    <original>Keyboard</original>
+    <translation>Teclado</translation>
+  </string>
+  <string>
+    <original>Enable notification icon</original>
+    <translation>Habilitar ícone de notificação</translation>
+  </string>
 
-  <word>
-    <key>Drive:</key>
-    <translation>Dispositivo:s</translation>
-  </word>
-  <word>
-    <key>Hotkey Chooser</key>
-    <translation>Seletor de tecla de atalho</translation>
-  </word>
-  <word>
-    <key>Key Combination:</key>
-    <translation>Combinações de teclas:</translation>
-  </word>
-  <word>
-    <key>Done</key>
-    <translation>Fim</translation>
-  </word>
+  <!-- Hotkeys Tab -->
+  <string>
+    <original>Action</original>
+    <translation>Ação</translation>
+  </string>
+  <string>
+    <original>Hotkey Editor</original>
+    <translation>Editor de atalhos</translation>
+  </string>
+  <string>
+    <original>Keys:</original>
+    <translation>Teclas:</translation>
+  </string>
+  <string>
+    <original>Hotkey Input</original>
+    <translation>Entrada de atalho</translation>
+  </string>
+  <string>
+    <original>Enter hotkeys now...</original>
+    <translation>Digite o atalho agora...</translation>
+  </string>
+  <string>
+    <original>Action:</original>
+    <translation>Ação:</translation>
+  </string>
+  <string>
+    <original>Amount:</original>
+    <translation>Quantidade:</translation>
+  </string>
+  <string>
+    <original>Volume Units</original>
+    <translation>Unidades de volume</translation>
+  </string>
+  <string>
+    <original>Percent</original>
+    <translation>Porcentagem</translation>
+  </string>
+  <string>
+    <original>Drive:</original>
+    <translation>Unidade:</translation>
+  </string>
+  <string>
+    <original>Key:</original>
+    <translation>Tecla:</translation>
+  </string>
+  <string>
+    <original>Play/Pause</original>
+    <translation>Reproduzir/Pausar</translation>
+  </string>
+  <string>
+    <original>Stop</original>
+    <translation>Parar</translation>
+  </string>
+  <string>
+    <original>Next</original>
+    <translation>Próxima</translation>
+  </string>
+  <string>
+    <original>Previous</original>
+    <translation>Anterior</translation>
+  </string>
+  <string>
+    <original>VK Code (Hex):</original>
+    <translation>Código VK (Hex):</translation>
+  </string>
+  <string>
+    <original>Path:</original>
+    <translation>Caminho:</translation>
+  </string>
 
+  <!-- Hotkey Actions -->
+  <string>
+    <original>Increase Volume</original>
+    <translation>Aumentar volume</translation>
+  </string>
+  <string>
+    <original>Increase Volume {1}%</original>
+    <translation>Aumentar volume {1}%</translation>
+  </string>
+  <string>
+    <original>Increase Volume {1} units</original>
+    <translation>Aumentar volume {1} unidades</translation>
+  </string>
+  <string>
+    <original>Decrease Volume</original>
+    <translation>Diminuir volume</translation>
+  </string>
+  <string>
+    <original>Decrease Volume {1}%</original>
+    <translation>Diminuir volume {1}%</translation>
+  </string>
+  <string>
+    <original>Decrease Volume {1} units</original>
+    <translation>Diminuir volume {1} unidades</translation>
+  </string>
+  <string>
+    <original>Set Volume</original>
+    <translation>Definir volume</translation>
+  </string>
+  <string>
+    <original>Set Volume: {1}%</original>
+    <translation>Definir volume: {1}%</translation>
+  </string>
+  <string>
+    <original>Set Volume: {1} units</original>
+    <translation>Definir volume: {1} unidades</translation>
+  </string>
+  <string>
+    <original>Mute</original>
+    <translation>Mudo</translation>
+  </string>
+  <string>
+    <original>Show Volume Slider</original>
+    <translation>Mostrar barra de volume</translation>
+  </string>
+  <string>
+    <original>Eject Drive</original>
+    <translation>Ejetar unidade</translation>
+  </string>
+  <string>
+    <original>Eject Drive: {1}</original>
+    <translation>Ejetar unidade: {1}</translation>
+  </string>
+  <string>
+    <original>Eject Last Disk</original>
+    <translation>Ejetar último disco</translation>
+  </string>
+  <string>
+    <original>Media Key</original>
+    <translation>Tecla de mídia</translation>
+  </string>
+  <string>
+    <original>Media Key: {1}</original>
+    <translation>Tecla de mídia: {1}</translation>
+  </string>
+  <string>
+    <original>Virtual Key</original>
+    <translation>Tecla virtual</translation>
+  </string>
+  <string>
+    <original>Virtual Key: 0x{1}</original>
+    <translation>Tecla virtual: 0x{1}</translation>
+  </string>
+  <string>
+    <original>Run</original>
+    <translation>Executar</translation>
+  </string>
+  <string>
+    <original>Run: {1}</original>
+    <translation>Executar: {1}</translation>
+  </string>
+  <string>
+    <original>Enable/Disable OSD</original>
+    <translation>Ativar/Desativar OSD</translation>
+  </string>
+  <string>
+    <original>Open Settings Dialog</original>
+    <translation>Abrir janela de configurações</translation>
+  </string>
+  <string>
+    <original>Exit 3RVX</original>
+    <translation>Sair do 3RVX</translation>
+  </string>
 
-<!-- Skin tab -->
-  <word>
-    <key>Available Skins</key>
-    <translation>Skins disponíveis</translation>
-  </word>
-  <word>
-    <key>Open Skin Folder</key>
-    <translation>Abrir pasta de skins</translation>
-  </word>
+  <!-- Update Strings -->
+  <string>
+    <original>Update Available</original>
+    <translation>Atualização disponível</translation>
+  </string>
+  <string>
+    <original>3RVX {1}</original>
+    <translation>3RVX {1}</translation>
+  </string>
+  <string>
+    <original>Install</original>
+    <translation>Instalar</translation>
+  </string>
+  <string>
+    <original>Ignore version</original>
+    <translation>Ignorar esta versão</translation>
+  </string>
+  <string>
+    <original>Remind me later</original>
+    <translation>Lembrar mais tarde</translation>
+  </string>
+  <string>
+    <original>Downloading...</original>
+    <translation>Baixando...</translation>
+  </string>
 
-  <word>
-    <key>Skin Information</key>
-    <translation>Informação de skin</translation>
-  </word>
-  <word>
-    <key>Author:</key>
-    <translation>Autor:</translation>
-  </word>
-  <word>
-    <key>Version:</key>
-    <translation>Versão:</translation>
-  </word>
-  <word>
-    <key>Skin Format Version:</key>
-    <translation>Versão e formato da skin:</translation>
-  </word>
-  <word>
-    <key>Author's Webpage</key>
-    <translation>Webpage do autor</translation>
-  </word>
+  <!-- Error Messages -->
+  <string>
+    <original>File not found:\n{1}</original>
+    <translation>Arquivo não encontrado:\n{1}</translation>
+  </string>
+  <string>
+    <original>Could not locate XML tag: {1}</original>
+    <translation>Não foi possível localizar a tag XML: {1}</translation>
+  </string>
+  <string>
+    <original>An unknown error occurred: ID #{1}</original>
+    <translation>Ocorreu um erro desconhecido: ID #{1}</translation>
+  </string>
 
-
-<!-- About tab -->
-  <word>
-    <key>Version</key>
-    <translation>Versão</translation>
-  </word>
-  <word>
-    <key>lang_author</key>
-    <translation>Idioma: Português Brasil - PT-BR</translation>
-  </word>
-  <word>
-    <key>lang_module</key>
-    <translation>Tradução Português Brasil - PT-BR: Johnny Wolinger</translation>
-  </word>
-
-
-<!-- Messages -->
-  <word>
-    <key>Load Defaults</key>
-    <translation>Carregar Padrões</translation>
-  </word>
-  <word>
-    <key>All settings will be lost.  Continue?</key>
-    <translation>Todas as configurações serão perdidas. Continuar?</translation>
-  </word>
-  <word>
-    <key>Skin Error</key>
-    <translation>Erro na skin</translation>
-  </word>
-  <word>
-    <key>Couldn't load skin.  Try loading the default skin?</key>
-    <translation>A skin não pode ser carregada. Tentar carregar a skin padrão?</translation>
-  </word>
-  <word>
-    <key>Couldn't load skin XML.  Check the file for syntax errors.</key>
-    <translation>A skin XML não pode ser carregada. Verifique erros de sintaxe no arquivo.</translation>
-  </word>
-  <word>
-    <key>Press hotkey/mouse combo...</key>
-    <translation>Pressione tecla de atalhos/mouse combo...</translation>
-  </word>
-
-</ArrayOfWord>
+</translation>
