@@ -57,6 +57,7 @@ void Display::LoadSettings() {
     /* Translations */
     _allMonitorStr = translator->Translate(_allMonitorStr);
     _primaryMonitorStr = translator->Translate(_primaryMonitorStr);
+    _secondaryMonitorStr = translator->Translate(_secondaryMonitorStr);
     _customPositionStr = translator->Translate(_customPositionStr);
     _noAnimStr = translator->Translate(_noAnimStr);
 
@@ -82,6 +83,7 @@ void Display::LoadSettings() {
     /* Display Devices */
     _displayDevice->AddItem(_primaryMonitorStr);
     _displayDevice->AddItem(_allMonitorStr);
+    _displayDevice->AddItem(_secondaryMonitorStr);
     std::list<DISPLAY_DEVICE> devices = DisplayManager::ListAllDevices();
     for (DISPLAY_DEVICE dev : devices) {
         std::wstring devString(dev.DeviceName);
@@ -92,6 +94,8 @@ void Display::LoadSettings() {
         monitorName = _primaryMonitorStr;
     } else if (monitorName == L"*") {
         monitorName = _allMonitorStr;
+    } else if (monitorName == L"**") {
+        monitorName = _secondaryMonitorStr;
     }
     _displayDevice->Select(monitorName);
 
@@ -140,6 +144,8 @@ void Display::SaveSettings() {
         monitor = L"";
     } else if (monitorIdx == 1) {
         monitor = L"*";
+    } else if (monitorIdx == 2) {
+        monitor = L"**";
     }
     settings->Monitor(monitor);
 

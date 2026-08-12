@@ -69,6 +69,26 @@ std::vector<Monitor> OSD::ActiveMonitors() {
             CLOG(L"Monitor: %s", it->first.c_str());
             monitors.push_back(it->second);
         }
+    } else if (monitorStr == L"**") {
+        /* All Monitors Except the Primary Monitor */
+        HMONITOR primary = DisplayManager::Primary().Handle();
+        std::unordered_map<std::wstring, Monitor> map
+            = DisplayManager::MonitorMap();
+
+        for (auto it = map.begin(); it != map.end(); ++it) {
+            if (it->second.Handle() == primary) {
+                continue;
+            }
+
+            CLOG(L"Monitor: %s", it->first.c_str());
+            monitors.push_back(it->second);
+        }
+
+        if (monitors.empty()) {
+            /* Only one monitor is connected; fall back to it. */
+            CLOG(L"Monitor: (Primary, no secondary monitors found)");
+            monitors.push_back(DisplayManager::Primary());
+        }
     } else {
         /* Specific Monitor */
         std::unordered_map<std::wstring, Monitor> map 

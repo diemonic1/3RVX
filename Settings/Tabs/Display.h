@@ -55,6 +55,7 @@ private:
     /* Strings: */
     std::wstring _allMonitorStr = L"All Monitors";
     std::wstring _primaryMonitorStr = L"Primary Monitor";
+    std::wstring _secondaryMonitorStr = L"All Monitors Except Primary";
     std::wstring _customPositionStr = L"Custom";
     std::wstring _noAnimStr = L"None";
 
